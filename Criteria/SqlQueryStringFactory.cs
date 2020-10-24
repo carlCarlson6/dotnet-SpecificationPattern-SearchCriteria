@@ -11,6 +11,7 @@ namespace Criteria
 
             query = criteria.Filters!=null? this.AddFilters(criteria.Filters, query) : query;
             query = criteria.Order!=null ? this.AddOrder(criteria.Order, query) : query;
+            query = criteria.GroupBy!=null ? this.AddGroup(criteria.GroupBy, query) : query;
             query = criteria.Pagination!=null ? this.AddPagination(criteria.Pagination, query) : query;
 
             query = String.Concat(query, ";");
@@ -30,9 +31,8 @@ namespace Criteria
             return query;
         }
         private String AddFilter(Filter filter, String query) => String.Concat(query, " ", filter.Field, filter.OperatorFilter, filter.ValueFilter.Value);
-        
+        private String AddGroup(String groupBy, String query) => String.Concat(query, " ", "GROUP BY", " ", groupBy); 
         private String AddOrder(Order order, String query) => String.Concat(query, " ", "ORDER BY", " ", order.OrderBy, " ", order.OrderType);
-
         private String AddPagination(Pagination pagination, String query)
         {
             query = String.Concat(query, " ", "LIMIT", " ", pagination.Limit);

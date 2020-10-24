@@ -1,5 +1,6 @@
 using System;
-namespace Criteria
+
+namespace Criteria.QueryExecutionElements
 {
     public class Filter
     {

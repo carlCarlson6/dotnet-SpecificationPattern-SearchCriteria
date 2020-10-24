@@ -1,6 +1,6 @@
 using System;
 
-namespace Criteria
+namespace Criteria.QueryExecutionElements
 {
     public class Order
     {
@@ -8,7 +8,7 @@ namespace Criteria
         private String orderType;
 
         public String OrderBy { get => this.orderBy; }
-        public String OrderType { get => this.orderBy; }
+        public String OrderType { get => this.orderType; }
         
         public Order(String orderBy, String orderType)
         {

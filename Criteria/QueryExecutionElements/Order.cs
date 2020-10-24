@@ -16,10 +16,7 @@ namespace Criteria.QueryExecutionElements
             this.orderType = orderType;
         }
 
-        public override string ToString()
-        {
-            return base.ToString();
-        }
+        public override string ToString() => String.Concat("ORDER BY ", this.orderBy, " ", this.orderType);
 
     }
 }

@@ -19,10 +19,6 @@ namespace Criteria.QueryExecutionElements
             this.valueFilter = valueFilter;
         }
 
-        public override string ToString()
-        {
-            // TOD
-            return base.ToString();
-        } 
+        public override String ToString() => String.Concat(this.field, this.operatorFilter, this.valueFilter.Value);
     }
 }

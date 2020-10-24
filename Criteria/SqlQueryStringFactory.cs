@@ -8,14 +8,15 @@ namespace Criteria
     {
         public String Create(SearchCriteria criteria)
         {
-            String query = String.Concat("SELECT * FROM", " ", criteria.TableName);
+            //String query = String.Concat("SELECT * FROM", " ", criteria.TableName);
+            String query = "";
 
-            query = criteria.Filters!=null? this.AddFilters(criteria.Filters, query) : query;
-            query = criteria.Order!=null ? this.AddOrder(criteria.Order, query) : query;
-            query = criteria.GroupBy!=null ? this.AddGroup(criteria.GroupBy, query) : query;
-            query = criteria.Pagination!=null ? this.AddPagination(criteria.Pagination, query) : query;
+            //query = criteria.Filters!=null ? this.AddFilters(criteria.Filters, query) : query;
+            //query = criteria.Order!=null ? this.AddOrder(criteria.Order, query) : query;
+            //query = criteria.GroupBy!=null ? this.AddGroup(criteria.GroupBy, query) : query;
+            //query = criteria.Pagination!=null ? this.AddPagination(criteria.Pagination, query) : query;
 
-            query = String.Concat(query, ";");
+            //query = String.Concat(query, ";");
             return query;
         }
 
@@ -40,5 +41,6 @@ namespace Criteria
             query = String.Concat(query, " ", "OFFSET", " ", pagination.Offset);
             return query;
         }
+
     }
 }

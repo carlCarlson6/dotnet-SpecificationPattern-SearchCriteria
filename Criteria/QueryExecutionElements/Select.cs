@@ -24,12 +24,36 @@ namespace Criteria.QueryExecutionElements
         {
             String query = "SELECT";
 
-            //  TODO
+            if(this.distinct)
+                query = String.Concat(query, " DISTINCT");
+
+
+            query = String.Concat(query, " ", this.AddColumns());
+            query = String.Concat(query, " FROM ", this.TableName);
 
             return query;
         }
 
-    }
+        public String AddColumns()
+        {
+            String columnsString = "";
 
+            if(columns == null)
+            {
+                columnsString = "*";
+            }
+            else
+            {
+                for(int i=0; i<this.columns.Count; i++)
+                {
+                    columnsString = String.Concat(columnsString, this.columns[i]);
+                    columnsString = (i+1 < this.columns.Count)? String.Concat(columnsString, ", ") : columnsString;
+                }
+            }
+
+            return columnsString;
+        }
+
+    }
 
 }

@@ -1,3 +1,5 @@
+using System;
+
 namespace Criteria.QueryExecutionElements
 {
     public class Pagination
@@ -14,10 +16,7 @@ namespace Criteria.QueryExecutionElements
             this.limit = limit;
         }
 
-        public override string ToString()
-        {
-            // TODO
-            return base.ToString();
-        }
+        public override String ToString() => String.Concat("LIMIT ", this.limit, " OFFSET ", this.offset);
+        
     }
 }

@@ -1,4 +1,5 @@
-﻿using Criteria;
+﻿using System.Text.RegularExpressions;
+using Criteria;
 using Criteria.QueryExecutionElements;
 using System;
 using System.Collections.Generic;
@@ -9,30 +10,22 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("--------------------------------");
-            
-            List<Filter> productoFilters = new List<Filter>()
+
+            List<String> columns = new List<String>(){ "Name", "Price", "Stock"};
+            Select select = new Select("Products", columns);
+            List<Filter> filters = new List<Filter>()
             {
                 new Filter("Name", FilterOperator.Equal, new ValueFilter("Juan")),
                 new Filter("Price", FilterOperator.GreaterThan, new ValueFilter("32.5")),
             };
-            Pagination productPagination = new Pagination(3, 2);
-            Order productOrder = new Order("Stock", OrderTypes.Descendent);
+            GroupBy group = new GroupBy("Price");
+            Order order = new Order("Stock", OrderTypes.Descendent);
+            Pagination pagination = new Pagination(3, 2);
+            
+            SearchCriteria criteria = new SearchCriteria(select, null, group, order);
 
-            SearchCriteria productCriteria = new SearchCriteria("Products", productoFilters, groupBy: "Price", productOrder, productPagination); 
-            Console.WriteLine(productCriteria.ToString());
-            
-            Console.WriteLine("--------------------------------");
-            
-            List<Filter> customerFilters = new List<Filter>()
-            {
-                new Filter("Name", FilterOperator.Equal, new ValueFilter("Juan")),
-                new Filter("City", FilterOperator.GreaterThan, new ValueFilter("Valencia")),
-            };
-            
-            SearchCriteria customerCriteria = new SearchCriteria("Customers", customerFilters);
-            
-            //Console.WriteLine(customerCriteria.ToString());
+            Console.WriteLine(criteria.ToString());            
+
         }
 
     }

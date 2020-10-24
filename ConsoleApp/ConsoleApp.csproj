@@ -1,9 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\Core\Core.csproj" />
     <ProjectReference Include="..\Criteria\Criteria.csproj" />
-    <ProjectReference Include="..\Repository\Repository.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

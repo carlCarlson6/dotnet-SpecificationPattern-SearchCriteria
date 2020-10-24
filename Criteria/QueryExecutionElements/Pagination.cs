@@ -13,5 +13,11 @@ namespace Criteria.QueryExecutionElements
             this.offset = offset;
             this.limit = limit;
         }
+
+        public override string ToString()
+        {
+            // TODO
+            return base.ToString();
+        }
     }
 }

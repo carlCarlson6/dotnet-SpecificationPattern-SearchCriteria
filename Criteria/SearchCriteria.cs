@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Criteria.QueryExecutionELements;
+using Criteria.QueryExecutionElements;
 
 namespace Criteria
 {

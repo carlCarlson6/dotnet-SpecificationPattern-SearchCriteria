@@ -1,5 +1,5 @@
 ﻿using Criteria;
-using Criteria.QueryExecutionELements;
+using Criteria.QueryExecutionElements;
 using System;
 using System.Collections.Generic;
 

@@ -17,6 +17,12 @@ namespace Criteria.QueryExecutionElements
             this.field = field;
             this.operatorFilter = operatorFilter;
             this.valueFilter = valueFilter;
-        }  
+        }
+
+        public override string ToString()
+        {
+            // TOD
+            return base.ToString();
+        } 
     }
 }

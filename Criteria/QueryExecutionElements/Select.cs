@@ -24,13 +24,11 @@ namespace Criteria.QueryExecutionElements
         {
             String query = "SELECT";
 
-
+            //  TODO
 
             return query;
         }
 
-        private String AddDistinct() => this.distinct? "DISTINCT" : "";
-        private 
     }
 
 

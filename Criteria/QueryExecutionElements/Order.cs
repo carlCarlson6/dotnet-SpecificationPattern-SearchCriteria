@@ -16,5 +16,10 @@ namespace Criteria.QueryExecutionElements
             this.orderType = orderType;
         }
 
+        public override string ToString()
+        {
+            return base.ToString();
+        }
+
     }
 }

@@ -8,7 +8,7 @@ on:
     
 jobs:
 
-  build:
+  build nad test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -24,9 +24,6 @@ jobs:
       - name: Build
         run: dotnet build
       
-  test:
-    runs-on: ubuntu-latest
-    steps:
       - name: Test
         run: |
           cd Testing

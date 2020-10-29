@@ -8,10 +8,12 @@ on:
     
 jobs:
 
-  build nad test:
+  build-and-test:
     runs-on: ubuntu-latest
+    
     steps:
-      - uses: actions/checkout@v2
+      - name: Setup actions/checkout@v2
+        uses: actions/checkout@v2
         
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v1

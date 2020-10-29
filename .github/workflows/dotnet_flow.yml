@@ -12,17 +12,20 @@ jobs:
   build:
     steps:
       - uses: actions/checkout@v2
+        
       - name: Setup .NET Core
-      - uses: actions/setup-dotnet@v1
-      - with:
+        uses: actions/setup-dotnet@v1
+        with:
           dotnet-version: 3.1.402
+      
       - name: Install dependencies
         run: dotnet restore
+      
       - name: Build
         run: dotnet build
       
   test:
     - name: Test
-        run: |
-          cd Testing
-          dotnet test
+      run: |
+        cd Testing
+        dotnet test

@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Criteria\Criteria.csproj" />
+    <ProjectReference Include="..\Repository\Repository.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

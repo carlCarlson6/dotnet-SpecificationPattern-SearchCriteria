@@ -10,22 +10,17 @@ namespace Repository
 {
     public class QueryExecutor
     {
-        private SqlConnection Connection;
-        
+        private SqlConnection connection;
         public QueryExecutor(String sqlServerConnectionString)
         {
-            this.Connection = SqlServerConnection.GetConnection(sqlServerConnectionString);
+            this.connection = new SqlConnection(sqlServerConnectionString);
         }
 
         public async Task<IEnumerable<T>> Execute<T>(SearchCriteria criteria)
         {
             String query = criteria.ToString();
-            using(DbConnection connection = this.Connection)
-            {
-                await connection.OpenAsync();
-                IEnumerable<T> entities = await connection.QueryAsync<T>(query);
-                return entities;
-            }
+            IEnumerable<T> entities = await connection.QueryAsync<T>(query);
+            return entities;
         }        
     }
 }
